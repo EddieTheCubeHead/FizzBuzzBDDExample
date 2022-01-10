@@ -1,3 +1,4 @@
+# Takes an inclusive range and returns a list of strings representing the FizzBuzz solution in the range
 def fizz_buzz(start: int, stop: int) -> list[str]:
     fizz_buzz_generator = iter(_FizzBuzzGenerator(start))
     return [next(fizz_buzz_generator) for _ in range(stop - start + 1)]
@@ -22,6 +23,7 @@ class _FizzBuzzGenerator:
         if self._current % self._buzz_mod == 0:
             string += "Buzz"
         return string or str(self._current)
+
 
 if __name__ == "__main__":
     print(fizz_buzz(4, 14))
